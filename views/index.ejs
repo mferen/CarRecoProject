@@ -37,21 +37,25 @@
             <div class="text-center p-3">
                 <button type="button" class="btn btn-success" id="search">Search</button>
             </div>
+            <table class="table table-bordered border-gray" id="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
 
             <p id="demo"></p>
 
     </div>
-
     </div>
-    <script>
-        const text1 = document.getElementById("brandId");
-        const text2 = document.getElementById("modelId");
-        const text3 = document.getElementById("yearId");
-
-        document.getElementById("search").addEventListener("click", function() {
-            document.getElementById("demo").innerHTML = text1.value + " " + text2.value + " " + text3.value;
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
+
 
 </html>
