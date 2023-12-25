@@ -1,6 +1,5 @@
 const mysql = require("mysql2");
 const dotenv = require("dotenv");
-let instance = null;
 dotenv.config();
 
 const con = mysql.createConnection({
@@ -20,11 +19,3 @@ con.connect((error) => {
     });
 
 });
-
-class Database {
-    static getDatabaseInstance() {
-        return instance ? instance : new Database();
-    }
-}
-
-module.exports = Database;
