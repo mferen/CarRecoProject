@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("http://192.168.2.99:3000/get")
+    fetch("http://localhost:3000/get")
         .then(res => res.json())
         .then(data => loadIndexTable(data["data"]));
 
@@ -12,7 +12,7 @@ searchBtn.onclick = function() {
     const searchBrand = document.querySelector("#brandId").value;
     const searchModel = document.querySelector("#modelId").value;
     const searchYear = document.querySelector("#yearId").value;
-    fetch("http://192.168.2.99:3000/search/" + searchBrand + "/" + searchModel + "/" + searchYear)
+    fetch("http://localhost:3000/search/" + searchBrand + "/" + searchModel + "/" + searchYear)
         .then(response => response.json())
         .then(data => loadIndexTable(data["data"]));
 
@@ -23,7 +23,7 @@ addBtn.onclick = function() {
   const addBrand = document.querySelector("#brandId").value;
   const addModel = document.querySelector("#modelId").value;
   const addYear = document.querySelector("#yearId").value;
-  fetch("http://192.168.2.99:3000/create/", {
+  fetch("http://localhost:3000/create/", {
     method: "post",
     headers: {
       'Accept': 'application/json',
