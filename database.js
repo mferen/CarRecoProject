@@ -46,6 +46,24 @@ class Db {
             throw error;
         };
     };
+    async addData(car_brand, car_model, car_year){
+
+
+
+      try {
+        const response = await new Promise((resolve, reject) => {
+          let sql = "INSERT INTO cars (car_brand, car_model, car_year) VALUES (?,?, ?)";
+          con.query(sql,[car_brand, car_model,car_year], (err, result) => {
+            if (err) reject(new Error(err.message));
+            resolve(result);
+          });
+        });
+        return response;
+      } catch (error) {
+        throw error;
+      };
+    };
+
 }
 
 module.exports = Db;

@@ -10,9 +10,9 @@
     "mysql2": "^3.6.5"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
-  "name": "website",
+  "name": "CarRecoProject",
   "description": "",
   "version": "1.0.0",
   "main": "app.js",

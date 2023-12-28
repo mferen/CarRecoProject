@@ -11,33 +11,35 @@
 </head>
 
 
-<body>
+<body  style="background-color: #2a4467">
     <div class="container-sm">
-        <%- include("D:/Desktop/website/views/partials/header.ejs") %>
+        <%- include("/home/mfe/workspace/CarRecoProject/views/partials/header.ejs") %>
             <div class="row align-items-center mt-4 mb-2">
-                <div class="col">
+                <div class="col" style="margin-top: 30px;">
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">Brand</span>
                         <input type="text" class="form-control" placeholder="" aria-label="Brand" aria-describedby="addon-wrapping" id="brandId">
                     </div>
                 </div>
-                <div class="col">
+                <div class="col" style="margin-top: 30px;">
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">Model</span>
                         <input type="text" class="form-control" placeholder="" aria-label="Model" aria-describedby="addon-wrapping" id="modelId">
                     </div>
                 </div>
-                <div class="col">
+                <div class="col" style="margin-top: 30px;">
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">Year</span>
                         <input type="text" class="form-control" placeholder="" aria-label="Model" aria-describedby="addon-wrapping" id="yearId">
                     </div>
                 </div>
             </div>
-            <div class="text-center p-3">
-                <button type="button" class="btn btn-success" id="search">Search</button>
+            <div class="text-center p-3" style="margin-top: 30px;">
+                <button type="button" class="btn btn-success" id="search" style="margin-right: 10px;">Search</button>
+                <button type="button" class="btn btn-success" id="add" style="margin-left: 5px;">Add</button>
             </div>
-            <table class="table table-bordered border-gray" id="table">
+
+            <table class="table table-bordered border-gray" id="table" style="margin-top: 30px; background-color: azure" >
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -51,7 +53,7 @@
             </table>
 
     </div>
-    </div>
+
     <script src="script.js"></script>
 </body>
 
