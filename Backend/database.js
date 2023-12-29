@@ -64,6 +64,22 @@ class Db {
       };
     };
 
+
+
+  async deleteData(id) {
+    try {
+      const response = await new Promise((resolve, reject) => {
+        con.query("DELETE FROM cars WHERE id=?", [id], (err, result) => {
+          if (err) reject(new Error(err.message));
+          resolve(result);
+        });
+      });
+      return response;
+    } catch (error) {
+      throw error;
+    };
+  };
+
 }
 
 module.exports = Db;

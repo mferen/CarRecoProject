@@ -10,12 +10,12 @@
     "mysql2": "^3.6.5"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node Backend/app.js"
   },
   "name": "CarRecoProject",
   "description": "",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "Backend/app.js",
   "author": "",
   "license": "ISC"
 }
