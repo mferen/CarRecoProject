@@ -44,23 +44,7 @@ addBtn.onclick = function() {
 }
 
 
-  const deletebtn =document.getElementsByClassName('.deletetbl')
-/*deletebtn.onclick = function (){
-  deletebtn.addEventListener("click", function (e){
-    alert("test");
-   const deleteBrand = document.querySelector("#brandId").value;
-   const deleteModel = document.querySelector("#modelId").value;
-   const deleteYear = document.querySelector("#yearId").value;
-
-
-  fetch("http://localhost:3000/delete/" + deleteBrand + "/" + deleteModel + "/" + deleteYear)
-    .then(response => response.json())
-    .then(data => loadIndexTable(data["data"]));
-
-});
-};*/
-
-
+ 
   function loadIndexTable(data) {
     const table = document.querySelector("#table");
     console.log(data);
