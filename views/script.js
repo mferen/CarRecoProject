@@ -44,7 +44,7 @@ addBtn.onclick = function() {
 }
 
 
- 
+
   function loadIndexTable(data) {
     const table = document.querySelector("#table");
     console.log(data);
@@ -67,7 +67,7 @@ addBtn.onclick = function() {
       tableDetails += `<td scope='col'>${car_brand}</td>`;
       tableDetails += `<td scope='col'>${car_model}</td>`;
       tableDetails += `<td class="deletetbl" scope='col'>${car_year}</td>`;
-      tableDetails += `<td scope='col'><button onclick="removefnc(${id})" type="button" class="btn btn-success deletetbl" style="float: right">Delete</button></td>`;
+      tableDetails += `<td scope='col'><button onclick="removefnc(${id})" type="button" class="btn btn-success deletetbl" style="background-color: darkslateblue" >Delete</button> <button onclick="updatefnc(${id})" type="button" class="btn btn-success text-center" style="background-color: orange" id="update">Update</button></td>`;
       tableDetails += "</tbody>";
 
     })
@@ -93,8 +93,38 @@ addBtn.onclick = function() {
 
 
     })
+
       .then(response => response.json())
 
   };
+
+ function updatefnc(id) {
+
+    const updatebtn = document.querySelector("#update");
+    updatebtn.onclick()
+    {
+      const updateBrand = document.querySelector("#brandId").value;
+      const updateModel = document.querySelector("#modelId").value;
+      const updateYear = document.querySelector("#yearId").value;
+
+
+      fetch("http://localhost:3000/update/" + id, {
+        method: "put",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+          car_brand: updateBrand,
+          car_model: updateModel,
+          car_year: updateYear
+        })
+      })
+        .then(response => response.json())
+
+    }
+ }
+
 
 

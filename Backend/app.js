@@ -52,6 +52,20 @@ app.post("/create", (req, res, next) => {
 
 });
 
+app.put("/update/:id", (req, res) =>{
+  const {car_brand, car_model, car_year} = req.body;
+  if (!car_brand || !car_year || !car_model) {
+
+    return res.status(400).json({message: "All fields are required"});
+  }
+  ;
+  const db = database.getDbInst();
+  db.updateData(car_brand, car_model, car_year);
+
+  return res.status(201).json({message: "car has been created"});
+
+})
+
 app.delete("/delete/:id", (req, res) => {
 
   const {id} = req.params;
