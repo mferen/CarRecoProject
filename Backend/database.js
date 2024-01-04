@@ -67,13 +67,13 @@ class Db {
 
 
 
-  async updateData(car_brand, car_model, car_year, id){
+  async updateData(car_brand, car_model, car_year,id){
 
 
 
     try {
       const response = await new Promise((resolve, reject) => {
-        let sql = "UPDATE cars SET  (car_brand, car_model, car_year)  WHERE id =?, [id]";
+        let sql = "UPDATE cars SET  car_brand = ?, car_model = ?, car_year = ?  WHERE id =?";
         con.query(sql,[car_brand, car_model,car_year,id], (err, result) => {
           if (err) reject(new Error(err.message));
           resolve(result);

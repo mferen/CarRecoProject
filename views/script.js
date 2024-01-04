@@ -101,7 +101,7 @@ addBtn.onclick = function() {
  function updatefnc(id) {
 
     const updatebtn = document.querySelector("#update");
-    updatebtn.onclick()
+    updatebtn.onclick = function()
     {
       const updateBrand = document.querySelector("#brandId").value;
       const updateModel = document.querySelector("#modelId").value;
@@ -119,6 +119,7 @@ addBtn.onclick = function() {
           car_brand: updateBrand,
           car_model: updateModel,
           car_year: updateYear
+
         })
       })
         .then(response => response.json())
